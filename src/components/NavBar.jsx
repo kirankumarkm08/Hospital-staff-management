@@ -2,13 +2,32 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { navLinks } from "@/Constants/index";
+// import { navLinks } from "@/Constants";
 import { usePathname } from "next/navigation";
 import Login from "@/components/signUp";
 import Button from "@/components/button";
 import Modal from "@/components/Modal";
 
 const NavBar = () => {
+  const navLinks = [
+    {
+      label: "home",
+      route: "/",
+    },
+    {
+      label: "Appointments",
+      route: "/Appointment",
+    },
+    {
+      label: "Health Blog",
+      route: "/Healthblog",
+    },
+    {
+      label: "Reviews",
+      route: "/Reviews",
+    },
+  ];
+
   const pathname = usePathname();
   const [visible, Setvisible] = useState(false);
   return (
@@ -21,23 +40,24 @@ const NavBar = () => {
         </div>
 
         <div className="flex gap-5 text-[20px] items-center  text-black hidden lg:inline-flex">
-          {navLinks.map((item) => {
-            const isActive = pathname === item.route;
-            return (
-              <Link
-                className={
-                  isActive
-                    ? "underline my-1 decoration-purple-500 font-semibold  "
-                    : "hover:text-purple-500 "
-                }
-                href={item.route}
-                key={item.route}
-              >
-                {" "}
-                {item.label}
-              </Link>
-            );
-          })}
+          {Array.isArray(navLinks) &&
+            navLinks.map((item) => {
+              const isActive = pathname === item.route;
+              return (
+                <Link
+                  className={
+                    isActive
+                      ? "underline my-1 decoration-purple-500 font-semibold  "
+                      : "hover:text-purple-500 "
+                  }
+                  href={item.route}
+                  key={item.route}
+                >
+                  {" "}
+                  {item.label}
+                </Link>
+              );
+            })}
           <div className=""></div>
           <Button
             className=" rounded text-[20px] text-white bg-purple-500 px-4 py-1 hover:bg-purple-700 "
