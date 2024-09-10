@@ -4,14 +4,15 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { navLinks } from "@/Constants";
 import { usePathname } from "next/navigation";
-import Login from "@/components/login";
+import Login from "@/components/signUp";
 import Button from "@/components/button";
+import Modal from "@/components/Modal";
 
 const NavBar = () => {
   const pathname = usePathname();
   const [visible, Setvisible] = useState(false);
   return (
-    <div className="fixed z-50 w-full ">
+    <div className="fixed z-50 w-full  border-b ">
       <div className=" flex text-black bg-white items-center  justify-between px-10 py-5   ">
         <div className="">
           <Link href="/" className="font-bold text-[25px]">
@@ -26,7 +27,7 @@ const NavBar = () => {
               <Link
                 className={
                   isActive
-                    ? "underline my-1 decoration-purple-500  "
+                    ? "underline my-1 decoration-purple-500 font-semibold  "
                     : "hover:text-purple-500 "
                 }
                 href={item.route}
@@ -38,12 +39,21 @@ const NavBar = () => {
             );
           })}
           <div className=""></div>
-          <Link
-            href="/Login"
+          <Button
             className=" rounded text-[20px] text-white bg-purple-500 px-4 py-1 hover:bg-purple-700 "
+            onClick={() => {
+              Setvisible(true);
+            }}
           >
             SignIn
-          </Link>
+          </Button>
+          {visible ? (
+            <Modal
+              onClose={() => {
+                Setvisible(false);
+              }}
+            />
+          ) : null}
         </div>
       </div>
     </div>
