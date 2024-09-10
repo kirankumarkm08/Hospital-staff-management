@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Login from "@/components/signUp";
-import Button from "@/components/button";
+import Button from "@/components/Button ";
 import Modal from "@/components/Modal";
 
 const NavBar = () => {

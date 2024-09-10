@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@/components/button";
+import Btn from "@/components/Button ";
 
 const Hero = () => {
   return (
@@ -14,9 +14,9 @@ const Hero = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad atque itaque
         dicta animi fugiat
       </h1>
-      <Button className="text-white mt-10 bg-purple-500 hover:bg-purple-700 text-[30px] px-5 py-2 rounded-xl">
+      <Btn className="text-white mt-10 bg-purple-500 hover:bg-purple-700 text-[30px] px-5 py-2 rounded-xl">
         Get Started
-      </Button>
+      </Btn>
     </div>
   );
 };
