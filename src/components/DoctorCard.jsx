@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { IoIosStar } from "react-icons/io";
-import Button from "./button";
+import Button from "@/components/Button ";
 
 const DoctorCard = ({ results }) => {
   return (

@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Doctor from "/public/Doctor.png";
 import { BsSearch } from "react-icons/bs";
-import Button from "@/components/button";
+import Button from "@/components/Button ";
 import DoctorCard from "@/components/DoctorCard";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
