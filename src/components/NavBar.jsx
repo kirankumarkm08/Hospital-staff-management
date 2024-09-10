@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { navLinks } from "@/Constants";
+import { navLinks } from "@/Constants/index";
 import { usePathname } from "next/navigation";
 import Login from "@/components/signUp";
 import Button from "@/components/button";
